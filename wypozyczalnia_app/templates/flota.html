@@ -1,0 +1,74 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/flota.css' %}" />
+
+<div class="sectionTitle">Samochody</div>
+<div id="posts">
+  <div class="myBechaviour">
+    {% for typ_auta in typy_aut %}
+    <div class="post">
+      <div name="rent" class="postLink">
+        <div class="postImgContainer">
+          <img src="../{{typ_auta.grafika}}" alt="" />
+        </div>
+
+        <div class="divHR"></div>
+        <div class="postText">
+          <pre>
+            {{typ_auta.nazwa}}
+
+        </pre
+          >
+        </div>
+        <div class="divHR"></div>
+        <div class="postFooter">
+          <div class="date">
+            <a
+              name="rent"
+              class="wynajmijButton"
+              href="/krotkoterminowy/{{typ_auta.nazwa|lower}}/"
+              role="button"
+            >
+              <div>Wynajem krótkoterminowy</div>
+            </a>
+            <a
+              class="wynajmijButton"
+              href="/dlugoterminowy/przeglad/{{typ_auta.nazwa|lower}}/"
+              role="button"
+            >
+              <div>Wynajem długoterminowy</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="sectionTitle">Hulajnogi</div>
+<div id="posts">
+  <div class="myBechaviour">
+    <div class="post">
+      <div class="postLink">
+        <div class="postImgContainer">
+          <img src="../{{hulajnoga_image}}" alt="" />
+        </div>
+        <div class="postHeader">{{hulajnoga_name}}</div>
+        <div class="divHR"></div>
+        <div class="postText">
+          <pre>
+              cena: <span class="cena">{{hulajnoga_cena}}</span> zł/min
+          </pre>
+        </div>
+        <div class="divHR"></div>
+        <div class="postFooter">
+          <a class="wynajmijButton" href="/krotkoterminowy/hulajnoga">
+            <div>Wynajem na minuty</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

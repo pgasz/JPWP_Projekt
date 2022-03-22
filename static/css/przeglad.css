@@ -1,0 +1,503 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.okno {
+  position: absolute;
+  top: 10vh;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%) scale(0);
+          transform: translate(-50%, 0%) scale(0);
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  z-index: 1501;
+  background-color: white;
+  width: 500px;
+  max-width: 80%;
+  padding: 2rem;
+}
+
+.okno .okno_header {
+  padding: 10px 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.okno .okno_header .okno_title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffb300;
+}
+
+.okno .okno_header .okno_close_button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #1b1b1b;
+}
+
+.okno .okno_body div:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.okno .okno_body div:first-child img {
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  min-width: 200px;
+}
+
+.okno .okno_body table {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.okno .okno_body table tbody tr:nth-child(2n) {
+  background-color: transparent !important;
+  color: #1b1b1b;
+}
+
+.okno .okno_body table tbody tr:nth-child(2n + 1) {
+  background-color: #ffb300;
+  color: white;
+}
+
+.okno .okno_body table tbody tr td:nth-child(2) {
+  text-align: center;
+}
+
+.okno.active {
+  -webkit-transform: translate(-50%, 0%) scale(1);
+          transform: translate(-50%, 0%) scale(1);
+}
+
+#overlay {
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffb300;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#overlay.active {
+  opacity: 0.5;
+  pointer-events: all;
+  z-index: 1500;
+}
+
+@media (max-width: 576px) {
+  .okno {
+    width: 500px;
+    max-width: 90%;
+    padding: 0rem;
+  }
+  .okno .okno_header .okno_title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffb300;
+  }
+  .okno .okno_header .okno_close_button {
+    font-size: 1.5rem;
+  }
+  .okno .okno_body table {
+    width: 90%;
+    margin: 1rem auto;
+  }
+  .okno .okno_body table tbody tr:nth-child(2n) {
+    background-color: transparent !important;
+    color: #1b1b1b;
+  }
+  .okno .okno_body table tbody tr:nth-child(2n + 1) {
+    background-color: #ffb300;
+    color: white;
+  }
+  .okno .okno_body table tbody tr td:nth-child(2) {
+    text-align: center;
+  }
+}
+
+body {
+  background-color: #ffb300;
+}
+
+#ourMap {
+  background-color: #ffb300;
+  padding: 5vh 0vh;
+}
+
+#ourMap .header {
+  font-size: 3rem;
+  font-weight: 900;
+  color: white;
+  text-align: center;
+  padding: 0rem 1.5rem;
+}
+
+#ourMap .divHR {
+  background-color: white;
+  width: 60%;
+  height: 2px;
+  margin: 1rem auto 0rem auto;
+}
+
+#ourMap .choice {
+  margin: 3vh 0vh;
+}
+
+#ourMap .choice .dropdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#ourMap .choice .dropdown .miastoButton {
+  width: 200px !important;
+  color: #ffb300 !important;
+  background-color: white !important;
+  border: 1px solid #e0e0e0;
+  -webkit-box-shadow: 2px 2px 5px rgba(10, 10, 10, 0.6);
+          box-shadow: 2px 2px 5px rgba(10, 10, 10, 0.6);
+}
+
+#ourMap .choice .dropdown ul {
+  width: 200px !important;
+}
+
+#ourMap #mapid {
+  height: 70vh;
+  min-height: 250px;
+  width: 100%;
+  margin: 0vh auto;
+}
+
+#ourMap .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 3vh;
+}
+
+#ourMap .content #kontaktButton {
+  width: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-transition: all 0.2s ease !important;
+  transition: all 0.2s ease !important;
+  -webkit-box-shadow: 2px 2px 5px rgba(10, 10, 10, 0.6);
+          box-shadow: 2px 2px 5px rgba(10, 10, 10, 0.6);
+}
+
+#ourMap .content #kontaktButton div {
+  color: #ffb300;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+#ourMap .content .oddzialy {
+  text-align: right;
+  color: white;
+}
+
+#ourMap .content .oddzialy .oddzialyHeader {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+#ourMap .content .oddzialy .oddzial {
+  line-height: 1.5;
+}
+
+.pop-up {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  max-width: 240px !important;
+}
+
+.pop-up .pop-up_nazwa {
+  color: #ffb300;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.pop-up .pop-up_buttons {
+  width: 100% !important;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.pop-up .pop-up_buttons .btn {
+  -webkit-box-shadow: 2px 2px 8px rgba(10, 10, 10, 0.6);
+          box-shadow: 2px 2px 8px rgba(10, 10, 10, 0.6);
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  margin: 0rem 0.2rem;
+  color: white;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  background-color: #ffb300 !important;
+  border: none;
+}
+
+.pop-up .pop-up_buttons .btn:hover {
+  background-color: white;
+}
+
+.pop-up .pop-up_buttons .btn:hover div {
+  color: #ffb300;
+}
+
+.content {
+  width: 94%;
+  max-width: 1500px;
+  margin: 2vh auto 5vh auto;
+  padding: 0rem 2rem 2rem 2rem !important;
+  background-color: white !important;
+}
+
+.content table {
+  width: 100%;
+  background-color: transparent !important;
+}
+
+.content table img {
+  max-width: 150px;
+  min-width: 100px;
+  margin: 0.5rem 0rem !important;
+}
+
+.content table .btn {
+  background-color: white !important;
+  color: #1b1b1b !important;
+  font-weight: 500;
+  border: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.content table .btn:hover {
+  opacity: 0.8;
+}
+
+.content table thead th {
+  text-align: center;
+  vertical-align: middle;
+  padding: 1rem 0rem 0.5rem 0rem;
+}
+
+.content table tbody tr {
+  padding: 0.5rem 0rem !important;
+}
+
+.content table tbody tr:nth-child(2n) {
+  background-color: #ffb300;
+  color: white;
+}
+
+.content table tbody tr:nth-child(2n + 1) {
+  background-color: #1b1b1b;
+  color: white;
+}
+
+.content table tbody tr td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+@media (max-width: 992px) {
+  #ourMap .header {
+    font-size: 2.5rem;
+  }
+  #ourMap .choice {
+    margin: 3vh 0vh;
+  }
+  #ourMap .content {
+    width: 94%;
+    max-width: 1500px;
+    margin: 5vh auto 0vh auto;
+    padding: 2rem !important;
+  }
+  #ourMap .content table .btn {
+    background-color: white !important;
+    color: #1b1b1b !important;
+    font-weight: 500;
+    border: none;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  #ourMap .content table .btn:hover {
+    opacity: 0.8;
+  }
+  #ourMap .content table thead th {
+    text-align: center;
+    vertical-align: middle;
+    padding: 1rem 0rem 0.5rem 0rem;
+    display: none !important;
+  }
+  #ourMap .content table tbody tr {
+    padding: 0.5rem 0rem !important;
+  }
+  #ourMap .content table tbody tr th {
+    display: none !important;
+  }
+  #ourMap .content table tbody tr td {
+    height: 3rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+  #ourMap .content table tbody tr td:nth-of-type(2) {
+    display: none !important;
+  }
+  #ourMap .content table tbody tr td:nth-of-type(3) {
+    display: none !important;
+  }
+  #ourMap .content table tbody tr td:nth-of-type(4) {
+    display: none !important;
+  }
+  #ourMap .content table tbody tr:nth-child(2n) {
+    background-color: #ffb300;
+    color: white;
+  }
+  #ourMap .content table tbody tr:nth-child(2n + 1) {
+    background-color: #1b1b1b;
+    color: white;
+  }
+}
+
+@media (max-width: 576px) {
+  #ourMap {
+    padding: 3vh 0vh 5vh 0vh;
+  }
+  #ourMap .header {
+    font-size: 1.5rem;
+  }
+  #ourMap .choice {
+    margin: 3vh 0vh;
+  }
+  #ourMap .choice .dropdown ul {
+    z-index: 1501;
+  }
+  #ourMap .content {
+    width: 100%;
+    max-width: 1500px;
+    margin: 5vh auto 0vh auto;
+    padding: 0rem !important;
+    background-color: transparent;
+  }
+  #ourMap .content table .btn {
+    font-size: 12px;
+    margin: 0px 1px;
+    background-color: white !important;
+    color: #1b1b1b !important;
+    font-weight: 500;
+    border: none;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+  }
+  #ourMap .content table .btn:hover {
+    opacity: 0.8;
+  }
+  #ourMap .content table thead th {
+    text-align: center;
+    vertical-align: middle;
+    padding: 1rem 0rem 0.5rem 0rem;
+    display: none !important;
+  }
+  #ourMap .content table tbody tr {
+    padding: 0.5rem 0rem !important;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+  #ourMap .content table tbody tr th {
+    display: none !important;
+  }
+  #ourMap .content table tbody tr td {
+    height: 3rem;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 12px;
+  }
+  #ourMap .content table tbody tr td:nth-of-type(2) {
+    display: none !important;
+  }
+  #ourMap .content table tbody tr td:nth-of-type(3) {
+    display: none !important;
+  }
+  #ourMap .content table tbody tr td:nth-of-type(4) {
+    display: none !important;
+  }
+  #ourMap .content table tbody tr:nth-child(2n) {
+    background-color: #ffb300;
+    color: white;
+  }
+  #ourMap .content table tbody tr:nth-child(2n + 1) {
+    background-color: #1b1b1b;
+    color: white;
+  }
+}
+/*# sourceMappingURL=przeglad.css.map */

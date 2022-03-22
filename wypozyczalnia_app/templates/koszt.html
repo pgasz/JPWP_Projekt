@@ -1,0 +1,79 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/wynajety.css' %}">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+
+    <div class="container">
+        <div class="timerDisplay">
+            00 : 00 : 00 
+        </div>
+        <div class="buttons">
+            <form method="POST" action="/krotkoterminowy/{% if samochod.typ_auta %}{{samochod.typ_auta}}{% else %}hulajnoga{% endif %}/{{samochod.id}}/zwrot">
+            {% csrf_token %}
+                <button type="submit" id="pauseTimer">Zwróć</button>
+            
+        </div>
+    </div>
+    <div id="data_rozpoczecia">
+        Data rozpoczecia
+    </div>
+    <div id="nazwa_pojazdu">
+        Nazwa pojazdu
+    </div>
+    
+    <div name="cena" id="cena">
+        Cena: 0 zł
+    </div>
+
+    </form>
+    <div id="nr_karty">
+        Numer karty
+    </div>
+
+
+    <script>
+
+        const data_wynajem = {
+            {% if pojazd == "h"  %}
+                cena_wartosc: {{samochod.cena}},
+            {% else %}
+                cena_wartosc: {{samochod.typ_auta.cena}},
+            {% endif %}
+            nazwa_pojazdu:  "{{samochod}}",
+            id_pojazdu: {{samochod.id}},
+            user_id: {{user.id}},
+            data_start: "{{samochod.czy_wynajety}}",
+            nr_karty: "{{user_profile.karta}}",
+            startowy_czas: {
+                "s": {{s}},
+                "m": {{m}},
+                "h": {{h}},
+            },
+            
+        }
+
+
+    </script>
+    <script src="{% static 'js/ekran_wynajety.js' %}"></script>
+
+    <script>
+        window.onbeforeunload = function (e) {
+            e = e || window.event;
+
+            // For IE and Firefox prior to version 4
+            if (e) {
+                e.returnValue = 'Sure?';
+            }
+
+            // For Safari
+            return 'Sure?';
+        };
+    </script>
+
+
+
+{% endblock %}

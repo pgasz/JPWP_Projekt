@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" href="/"><span>Bee</span>Fast</a>
+  <button id="navButton" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home</a>
+      <a class="nav-item nav-link" href="/cena">Cena</a>
+      <a class="nav-item nav-link" href="/flota">Flota</a>
+      <a class="nav-item nav-link" href="/kontakt">Kontakt</a>
+      {% if user.is_superuser %}
+      <a class="nav-item nav-link" href="/testujemape">Pobierz kordynaty</a>
+      <a class="nav-item nav-link" href="/dodajmiasto">Dodaj miasto</a>
+      <a class="nav-item nav-link" href="/dodaj_strefe">Dodaj strefe</a>
+      {% endif %}
+      
+      {% if request.user.is_authenticated %}
+      <a class="nav-item nav-link" href="/uzupelnijprofil">Uzupełnij Profil</a>
+      <a class="nav-item nav-link disabled" id="nazwa_uzytkownika" href="#">Witaj, {{request.user}}</a>
+      <a class="nav-item nav-link"  href="{% url 'wylogowywanie' %}">Wyloguj</a>
+      {% else %}
+      <a class="nav-item nav-link" href="/rejestracja">Zarejestruj się / Zaloguj się</a>
+      {% endif %}
+    </div>
+  </div>
+</nav>

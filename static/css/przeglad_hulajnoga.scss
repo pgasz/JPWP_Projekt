@@ -1,0 +1,365 @@
+@import "variables.scss";
+@import "wiecej.scss";
+
+#okno {
+  .okno_body {
+    div {
+      img {
+        height: 50% !important;
+        width: 50% !important;
+      }
+    }
+  }
+}
+body {
+  background-color: $zolty;
+}
+#ourMap {
+  background-color: $zolty;
+  padding: 5vh 0vh;
+  .header {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    text-align: center;
+    padding: 0rem 1.5rem;
+  }
+  .divHR {
+    background-color: white;
+    width: 60%;
+    height: 2px;
+    margin: 1rem auto 0rem auto;
+  }
+  .choice {
+    margin: 3vh 0vh;
+    .dropdown {
+      display: flex;
+      justify-content: center;
+      .miastoButton {
+        width: 200px !important;
+        color: $zolty !important;
+        background-color: white !important;
+        border: 1px solid #e0e0e0;
+        box-shadow: 2px 2px 5px rgba(10, 10, 10, 0.6);
+      }
+      ul {
+        width: 200px !important;
+      }
+    }
+  }
+  #mapid {
+    height: 70vh;
+    min-height: 250px;
+    width: 100%;
+    margin: 0vh auto;
+  }
+  .content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 3vh;
+    #kontaktButton {
+      width: 20%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem 3rem;
+      font-size: 1.2rem;
+      background-color: white;
+      border-radius: 5px;
+      transition: all 0.2s ease !important;
+      box-shadow: 2px 2px 5px rgba(10, 10, 10, 0.6);
+
+      div {
+        color: $zolty;
+        font-size: inherit;
+        font-weight: inherit;
+      }
+    }
+    .oddzialy {
+      text-align: right;
+      color: white;
+      .oddzialyHeader {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+      .oddzial {
+        line-height: 1.5;
+      }
+    }
+  }
+}
+
+.pop-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  max-width: 240px !important;
+  .pop-up_nazwa {
+    color: $zolty;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+  }
+  .pop-up_buttons {
+    width: 100% !important;
+    display: flex;
+    justify-content: space-evenly;
+
+    .btn {
+      box-shadow: 2px 2px 8px rgba(10, 10, 10, 0.6);
+      min-width: fit-content;
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      margin: 0rem 0.2rem;
+      color: white;
+      transition: all 0.2s ease;
+      background-color: $zolty !important;
+      border: none;
+      &:hover {
+        background-color: white;
+        div {
+          color: $zolty;
+        }
+      }
+    }
+  }
+}
+.content {
+  width: 94%;
+  max-width: 1500px;
+  margin: 2vh auto 5vh auto;
+  padding: 0rem 2rem 2rem 2rem !important;
+  background-color: white !important;
+  table {
+    width: 100%;
+    background-color: transparent !important;
+    img {
+      max-width: 150px;
+      min-width: 100px;
+      margin: 0.5rem 0rem !important;
+    }
+    .btn {
+      // nie chce mi się
+      background-color: white !important;
+      color: $grafit !important;
+      font-weight: 500;
+      border: none;
+      transition: all 0.2s ease;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+    thead {
+      th {
+        text-align: center;
+        vertical-align: middle;
+        padding: 1rem 0rem 0.5rem 0rem;
+      }
+    }
+    tbody {
+      tr {
+        padding: 0.5rem 0rem !important;
+
+        &:nth-child(2n) {
+          background-color: $zolty;
+          color: white;
+        }
+        &:nth-child(2n + 1) {
+          background-color: $grafit;
+          color: white;
+        }
+        td {
+          text-align: center;
+          vertical-align: middle;
+        }
+        th {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $small) {
+  #ourMap {
+    .header {
+      font-size: 2.5rem;
+    }
+    .divHR {
+    }
+    .choice {
+      margin: 3vh 0vh;
+      .dropdown {
+        .miastoButton {
+        }
+        ul {
+        }
+      }
+    }
+    #mapid {
+    }
+    .content {
+      width: 94%;
+      max-width: 1500px;
+      margin: 5vh auto 0vh auto;
+      padding: 2rem !important;
+
+      table {
+        .btn {
+          // nie chce mi się
+          background-color: white !important;
+          color: $grafit !important;
+          font-weight: 500;
+          border: none;
+          transition: all 0.2s ease;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        thead {
+          th {
+            text-align: center;
+            vertical-align: middle;
+            padding: 1rem 0rem 0.5rem 0rem;
+            display: none;
+            // &:nth-of-type(3) {
+            //   display: none !important;
+            // }
+          }
+        }
+        tbody {
+          tr {
+            padding: 0.5rem 0rem !important;
+            th {
+              display: none !important;
+            }
+            td {
+              height: 3rem;
+              text-align: center;
+              vertical-align: middle;
+              &:nth-of-type(2) {
+                display: none !important;
+              }
+            }
+            &:nth-child(2n) {
+              background-color: $zolty;
+              color: white;
+            }
+            &:nth-child(2n + 1) {
+              background-color: $grafit;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $smallest) {
+  #okno {
+    .okno_body {
+      div {
+        img {
+          height: 50% !important;
+          width: 30% !important;
+          min-width: none !important;
+        }
+      }
+    }
+  }
+  #ourMap {
+    padding: 3vh 0vh 5vh 0vh;
+    .header {
+      font-size: 1.5rem;
+    }
+    .divHR {
+    }
+    .choice {
+      margin: 3vh 0vh;
+      .dropdown {
+        .miastoButton {
+        }
+        ul {
+          z-index: 1501;
+        }
+      }
+    }
+    #mapid {
+    }
+    .content {
+      width: 100%;
+      max-width: 1500px;
+      margin: 5vh auto 0vh auto;
+      padding: 0rem !important;
+      background-color: transparent;
+
+      table {
+        .btn {
+          // nie chce mi się
+          font-size: 12px;
+          margin: 0px 1px;
+          background-color: white !important;
+          color: $grafit !important;
+          font-weight: 500;
+          border: none;
+          transition: all 0.2s ease;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        thead {
+          th {
+            text-align: center;
+            vertical-align: middle;
+            padding: 1rem 0rem 0.5rem 0rem;
+            display: none !important;
+            // &:nth-of-type(1) {
+            //   display: none !important;
+            // }
+            // &:nth-of-type(3) {
+            //   display: none !important;
+            // }
+            // &:nth-of-type(4) {
+            //   display: none !important;
+            // }
+            // &:nth-of-type(5) {
+            //   display: none !important;
+            // }
+          }
+        }
+        tbody {
+          tr {
+            padding: 0.5rem 0rem !important;
+            border-top: 1px solid white;
+            border-bottom: 1px solid white;
+            th {
+              display: none !important;
+            }
+            td {
+              height: 3rem;
+              text-align: center;
+              vertical-align: middle;
+              font-size: 12px;
+              &:nth-of-type(2) {
+                display: none !important;
+              }
+            }
+            &:nth-child(2n) {
+              background-color: $zolty;
+              color: white;
+            }
+            &:nth-child(2n + 1) {
+              background-color: $grafit;
+              color: white;
+            }
+          }
+        }
+      }
+    }
+  }
+}

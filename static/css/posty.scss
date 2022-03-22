@@ -1,0 +1,170 @@
+@import "./variables.scss";
+#posts {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 3vh auto;
+  .myBechaviour {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    .post {
+      width: 400px !important;
+      border: 1px solid #e0e0e0;
+      background-color: white;
+      margin: 0px 1rem 3vh 1rem;
+      .postLink {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.2s ease;
+        overflow: hidden !important;
+        &:hover {
+          img {
+            transform: scale(1.1);
+            opacity: 0.8;
+          }
+        }
+        .postImgContainer {
+          width: 100%;
+          overflow: hidden;
+
+          img {
+            transition: all 0.2s ease;
+            width: 100%;
+            min-height: 200px;
+            height: 30vh !important;
+            max-height: 500px;
+            object-fit: cover;
+          }
+        }
+        .postHeader {
+          width: 90%;
+          text-align: center;
+          margin: 1rem auto;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: $zolty;
+        }
+        .divHR {
+          background-color: #e0e0e0;
+          width: 80%;
+          height: 1px;
+          margin: 0rem auto;
+        }
+        .postText {
+          width: 90%;
+          margin: 1rem auto;
+          font-size: 1.2rem;
+          text-align: justify;
+          color: $grafit;
+          pre {
+            width: 100% !important;
+            height: 100% !important;
+            color: inherit !important;
+            font-size: inherit !important;
+            text-align: center;
+            overflow: visible !important;
+            margin: 0px !important;
+            font-family: $font !important;
+            white-space: normal !important;
+          }
+        }
+        .divHR {
+          background-color: #e0e0e0;
+          width: 80%;
+          height: 1px;
+          margin: 0rem auto;
+        }
+        .postFooter {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+          width: 90%;
+          margin: 1rem auto;
+
+          .wynajmijButton {
+            width: 80%;
+            min-width: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            font-size: 1.2rem;
+            background-color: $zolty;
+            border-radius: 5px;
+            transition: all 0.2s ease !important;
+            box-shadow: 2px 2px 5px rgba(10, 10, 10, 0.6);
+            margin: 1rem auto;
+            text-align: center;
+            div {
+              color: white;
+              font-size: inherit;
+              font-weight: inherit;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $smallest) {
+  #posts {
+    width: 94%;
+    margin: 1vh auto;
+    .myBechaviour {
+      .post {
+        width: 400px !important;
+        border: 1px solid #e0e0e0;
+        background-color: white;
+        margin: 0px 0rem 2vh 0rem;
+        .postLink {
+          &:hover {
+            img {
+            }
+          }
+          .postImgContainer {
+            img {
+            }
+          }
+          .postHeader {
+            width: 90%;
+            margin: 1rem auto;
+            font-size: 1.5rem;
+            font-weight: 700;
+          }
+          .divHR {
+            background-color: #e0e0e0;
+            width: 80%;
+            height: 1px;
+            margin: 0rem auto;
+          }
+          .postText {
+            margin: 1rem auto;
+            font-size: 1.2rem;
+          }
+          .divHR {
+            background-color: #e0e0e0;
+            width: 80%;
+            height: 1px;
+            margin: 0rem auto;
+          }
+          .postFooter {
+            .date {
+              color: $czerwien;
+              font-size: 1.2rem;
+              span {
+                font-size: inherit;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

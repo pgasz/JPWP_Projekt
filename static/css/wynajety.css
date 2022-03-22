@@ -1,0 +1,212 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.container {
+  background-color: #1b1b1b;
+  width: 60%;
+  max-width: 500px;
+  margin: 10vh auto 3vh auto;
+  padding: 60px 0;
+  border-radius: 10px;
+}
+
+.container .timerDisplay {
+  position: relative;
+  width: 110%;
+  background: #ffb300;
+  left: -5%;
+  padding: 40px 0;
+  font-family: "Roboto mono", monospace;
+  color: #ffffff;
+  font-size: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 20px rgba(0, 139, 253, 0.25);
+          box-shadow: 0 0 20px rgba(0, 139, 253, 0.25);
+}
+
+.container .buttons {
+  width: 80%;
+  margin: 60px auto 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.container .buttons form {
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .buttons form button {
+  padding: 10px 20px;
+  background: #ffb300;
+  color: white;
+  border: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.container .buttons form button:hover {
+  background: white;
+  color: #ffb300;
+}
+
+#nazwa_pojazdu {
+  color: #707070;
+  font-family: "Roboto mono", monospace;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0vh auto 3vh auto;
+  padding: 0px 1rem;
+  text-align: center;
+}
+
+#data_rozpoczecia {
+  color: #707070;
+  font-family: "Roboto mono", monospace;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0vh auto 3vh auto;
+  padding: 0px 1rem;
+  text-align: center;
+}
+
+#cena {
+  width: 66%;
+  max-width: 550px;
+  padding: 1rem;
+  margin: 3vh auto;
+  background: #ffb300;
+  font-family: "Roboto mono", monospace;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-shadow: 2px 2px 8px rgba(10, 10, 10, 0.6);
+          box-shadow: 2px 2px 8px rgba(10, 10, 10, 0.6);
+}
+
+#nr_karty {
+  color: #707070;
+  font-family: "Roboto mono", monospace;
+  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin: 0vh auto 3vh auto;
+  padding: 0px 1rem;
+  text-align: center;
+}
+
+@media (max-width: 576px) {
+  .container {
+    background-color: #1b1b1b;
+    width: 75%;
+    max-width: 500px;
+    margin: 10vh auto 3vh auto;
+    padding: 60px 0px 40px 0px;
+  }
+  .container .timerDisplay {
+    width: 110%;
+    background: #ffb300;
+    left: -5%;
+    padding: 30px 0;
+    font-size: 26px;
+    font-weight: 500;
+  }
+  .container .buttons {
+    width: 100%;
+    margin: 40px auto 0 auto;
+  }
+  .container .buttons form {
+    width: inherit;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .container .buttons form button {
+    width: 60%;
+    margin: 0px auto;
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+  #nazwa_pojazdu {
+    font-size: 16px;
+  }
+  #data_rozpoczecia {
+    font-size: 16px;
+  }
+  #nr_karty {
+    font-size: 16px;
+  }
+}
+/*# sourceMappingURL=wynajety.css.map */

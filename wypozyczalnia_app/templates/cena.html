@@ -1,0 +1,112 @@
+{% extends 'main.html' %} {% load static %} {% block content %}
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"
+></script>
+<link rel="stylesheet" type="text/css" href="{% static 'css/cena.css' %}" />
+
+<style>
+  tr img {
+    max-width: 150px;
+  }
+</style>
+
+<div class="sectionTitle">Wynajem na minuty</div>
+
+<div id="posts">
+  <div class="myBechaviour">
+    {% for typ_auta in typy_aut %}
+
+    <div class="post">
+      <div class="postLink">
+        <div class="postImgContainer">
+          <img src="../{{typ_auta.grafika}}" alt="" />
+        </div>
+        <div class="postHeader">{{typ_auta.nazwa}}</div>
+        <div class="divHR"></div>
+        <div class="postText">
+          <pre>
+                cena: <span class="cena">{{typ_auta.cena}}</span> zł/min
+          </pre>
+        </div>
+        <div class="divHR"></div>
+        <div class="postFooter">
+          <a
+            class="wynajmijButton"
+            href="/krotkoterminowy/{{typ_auta.nazwa|lower}}"
+          >
+            <div>Wynajmij</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+<div class="sectionTitle">Wynajem długoterminowy</div>
+
+<div id="posts">
+  <div class="myBechaviour">
+    {% for typ_auta in typy_aut %}
+
+    <div class="post">
+      <div class="postLink">
+        <div class="postImgContainer">
+          <img src="../{{typ_auta.grafika}}" alt="" />
+        </div>
+        <div class="postHeader">{{typ_auta.nazwa}}</div>
+        <div class="divHR"></div>
+        <div class="postText">
+          <pre>
+                cena: <span class="cena">{{typ_auta.cena}}</span> zł/dzień
+          </pre>
+        </div>
+        <div class="divHR"></div>
+        <div class="postFooter">
+          <a
+            class="wynajmijButton"
+            href="/dlugoterminowy/przeglad/{{typ_auta.nazwa|lower}}/"
+          >
+            <div>Wynajmij</div>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {% endfor %}
+  </div>
+</div>
+
+<div class="sectionTitle">Wynajem hulajnóg</div>
+
+<div id="posts">
+  <div class="myBechaviour">
+    <div class="post">
+      <div class="postLink">
+        <div class="postImgContainer">
+          <img src="../{{hulajnoga_image}}" alt="" />
+        </div>
+        <div class="postHeader">{{hulajnoga_name}}</div>
+        <div class="divHR"></div>
+        <div class="postText">
+          <pre>
+            cena: <span class="cena">{{hulajnoga_cena}}</span> zł/min
+        </pre>
+        </div>
+        <div class="divHR"></div>
+        <div class="postFooter">
+          <a class="wynajmijButton" href="/krotkoterminowy/hulajnoga">
+            <div>Wynajmij</div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{% static '/js/cena.js' %}"></script>
+
+{% endblock %}
