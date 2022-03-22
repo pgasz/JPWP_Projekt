@@ -3,6 +3,7 @@
 BeeFast to projekt wypożyczalni pojazdów (samochodów oraz hulajnóg). 
 Chcieliśmy zmierzyć się z wyzwaniem stworzenia kompleksowego systemu tego typu.
 Projekt był wykonywany w ramach zajęć projektowych na uczelni.
+Stronę możecie zobaczyć [tutaj](https://beefast.pgasz.pl/ "tutaj")
 
 ## Technologie
 ### Front-end
